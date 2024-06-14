@@ -35,28 +35,35 @@
         <img src="images/image.jpg" alt="image" height="250" width="200">
     </div>
 
-    form to get user name, email, password and gender
     <form>
         <div>
+            <h1>Form</h1>
+        </div>
+        <div>
             <label>Name:</label>
-            <input type="text">
+            <input type="text" placeholder="Enter name" required>
         </div>
         <div>
             <label>Email:</label>
-            <input type="email">
+            <input type="email" placeholder="Enter email" required>
         </div>
         <div>
             <label>Password:</label>
-            <input type="password">
+            <input type="password" placeholder="Enter passord" required>
         </div>
         <div>
             <label>Gender</label><br>
-            <input type="radio">
+            <input type="radio" id="female" name="gender" value="female">
             <label>Female</label><br>
-            <input type="radio">
+            <input type="radio" id="male" name="gender" value="male">
             <label>Male</label><br>
         </div>
-    
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
