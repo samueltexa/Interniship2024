@@ -1,0 +1,11 @@
+.post{
+    background-color: rgb(34, 59, 82);
+    padding: 10px;
+}
+
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 12px;
+}
