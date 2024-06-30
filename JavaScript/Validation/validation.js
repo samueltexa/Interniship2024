@@ -86,8 +86,7 @@ const log_user_details = (event) => {
         email,
     }
     console.log(user_data);
-}
-;
+};
 // create new user deatils
 const create_new_user_in_db = (event) => {
     let usl = "https://registeruser.com/register";
