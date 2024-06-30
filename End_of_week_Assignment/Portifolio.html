@@ -4,113 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .navbar {
-            display: flex;
-            justify-content: flex-end;
-            background-color: #f4f4f4;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1;
-        }
-        .navbar a {
-            text-decoration: none;
-            color: #333;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-        .section {
-            padding: 100px 20px;
-            text-align: center;
-        }
-        .home {
-            background-color: #e2e2e2;
-        }
-        .about {
-            background-color: #d4d4d4;
-        }
-        .experience {
-            background-color: #c6c6c6;
-        }
-        .projects {
-            background-color: #b8b8b8;
-        }
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        ul {
-            text-align: left;
-            display: inline-block;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-        }
-        /* Pop-up form styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .form-group button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="Portifolio.css">
 </head>
 <body>
     <div class="navbar">
@@ -169,30 +63,35 @@
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" required>
+                <div id="firstusername_error_message"></div>
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name</label>
                 <input type="text" id="lastName" required>
+                <div id="lastname_error_message"></div>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
+                <div id="email_error_message"></div>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" required>
+                <div id="password_error_message"></div>
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" required>
+                <div id="password_error_message"></div>
             </div>
             <div class="form-group">
-                <button type="submit">Register</button>
+                <button onclick="log_user_details(event)" id="submit_button">Register</button>
             </div>
         </div>
     </div>
 
-    <!-- Login Modal -->
+    <!-- Login -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeLogin">&times;</span>
@@ -200,13 +99,15 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" required>
+                <div id="username_error_message"></div>
             </div>
             <div class="form-group">
                 <label for="loginPassword">Password</label>
                 <input type="password" id="loginPassword" required>
+                <div id="loginpassword_error_message"></div>
             </div>
             <div class="form-group">
-                <button type="submit">Login</button>
+                <button onclick="login_user(event)" id="submit_button">Login</button>
             </div>
         </div>
     </div>
@@ -217,48 +118,6 @@
         </div>
     </footer>
 
-    <script>
-        // Get modal elements
-        var registerModal = document.getElementById("registerModal");
-        var loginModal = document.getElementById("loginModal");
-
-        // Get open modal buttons
-        var registerBtn = document.getElementById("registerBtn");
-        var loginBtn = document.getElementById("loginBtn");
-
-        // Get close buttons
-        var closeRegister = document.getElementById("closeRegister");
-        var closeLogin = document.getElementById("closeLogin");
-
-        // Open the register modal
-        registerBtn.onclick = function() {
-            registerModal.style.display = "block";
-        }
-
-        // Open the login modal
-        loginBtn.onclick = function() {
-            loginModal.style.display = "block";
-        }
-
-        // Close the register modal
-        closeRegister.onclick = function() {
-            registerModal.style.display = "none";
-        }
-
-        // Close the login modal
-        closeLogin.onclick = function() {
-            loginModal.style.display = "none";
-        }
-
-        // Close modals when clicking outside of them
-        window.onclick = function(event) {
-            if (event.target == registerModal) {
-                registerModal.style.display = "none";
-            }
-            if (event.target == loginModal) {
-                loginModal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="Portifolio.js"></script>
 </body>
 </html>
