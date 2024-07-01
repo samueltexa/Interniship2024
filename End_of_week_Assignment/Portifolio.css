@@ -2,7 +2,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #d4d4d4;
         }
 
         .navbar {
@@ -53,12 +53,14 @@
             text-align: left;
             display: inline-block;
         }
-
         footer {
             text-align: center;
             padding: 20px 0;
             background-color: #333;
             color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
         /* Pop-up form styles */
@@ -118,4 +120,21 @@
             color: #fff;
             border: none;
             cursor: pointer;
+        }
+
+
+        * Styling for the social media icons */ .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #25c210;
+            font-size: 24px;
+        }
+
+        .social-icons a:hover {
+            color: #34208b;
         }
