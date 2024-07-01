@@ -36,7 +36,7 @@
           registerModal.style.display = "none";
       }
       if (event.target == loginModal) {
-          loginModal.style.display = "none";
+          loginModal.style.display = "block";
       }
   }
 
@@ -64,7 +64,7 @@
         }
     } else {
         const firstusername_error_message = document.getElementById("firstusername_error_message");
-        firstusername_error_message.innerHTML = "Username is required";
+        firstusername_error_message.innerHTML = "first Name is required";
         firstusername_error_message.style.color = "red";
     }
 
@@ -81,7 +81,7 @@
             }
         } else {
             const lastname_error_message = document.getElementById("lastname_error_message");
-            lastname_error_message.innerHTML = "Username is required";
+            lastname_error_message.innerHTML = "last Name is required";
             lastname_error_message.style.color = "red";
         }
 
@@ -175,8 +175,7 @@ const login_user = (event) => {
     // Log the user data if all validations pass and navigate to home
     if (user_data.username && user_data.loginPassword) {
         console.log(user_data);
-        // Programmatically click the "Home" link
-        document.querySelector('a[href="#home"]').click();
+        window.location.href = "#home";
     } else {
         console.log("Validation failed");
     }
