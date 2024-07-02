@@ -276,3 +276,15 @@ textarea.contact_input {
         padding: 15px;
     }
 }
+
+.logout-link {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.logout-link a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    color: red;
+}
