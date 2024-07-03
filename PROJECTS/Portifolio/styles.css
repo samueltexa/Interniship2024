@@ -115,8 +115,6 @@ footer {
     width: 100%;
 }
 
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -216,7 +214,6 @@ display: none;
 display: flex;
 }
 }
-
 
 /* conatct section*/
 .contact-section {
