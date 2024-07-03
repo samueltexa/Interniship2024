@@ -140,17 +140,17 @@ footer {
 }
 
 .burger {
-    display: none; /* Hide the burger icon by default on larger screens */
+    display: none;
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: flex-start; /* Adjust alignment for smaller screens */
+        justify-content: flex-start;
     }
 
     .navbar-links {
-        display: none; /* Hide links by default on smaller screens */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -174,7 +174,7 @@ footer {
     }
 
     .burger {
-        display: block; /* Show the burger icon on smaller screens */
+        display: block;
         cursor: pointer;
     }
 
@@ -186,27 +186,23 @@ footer {
         transition: transform 0.3s ease;
     }
 
-    /* Rotate burger icon to 'X' shape when menu is open */
     #navbar-toggle:checked + .burger .burger-icon {
         transform: rotate(45deg);
     }
 
-    /* Rotate burger icon to 'X' shape when menu is open */
     #navbar-toggle:checked + .burger .burger-icon:nth-child(2) {
         opacity: 0;
     }
 
-    /* Rotate burger icon to 'X' shape when menu is open */
     #navbar-toggle:checked + .burger .burger-icon:nth-child(3) {
         transform: rotate(-45deg);
     }
 
-    /* Show navbar links when checkbox is checked */
     #navbar-toggle:checked ~ .navbar-links {
         display: flex;
     }
 }
-/* Hide checkbox and hamburger icon on larger screens */
+
 @media (min-width: 769px) {
 .navbar-toggle {
 display: none;
