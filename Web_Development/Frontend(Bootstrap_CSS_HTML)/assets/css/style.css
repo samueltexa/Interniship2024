@@ -1,0 +1,12 @@
+form{
+    background-color: blue;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 12px;
+}
+
+.submit-button{
+    background-color: green;
+    padding: 12px;
+    border-radius: 12px;
+}
