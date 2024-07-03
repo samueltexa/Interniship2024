@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly */
+    align-items: center; /* Aligns items vertically centered */
+    padding: 10px;
+    background-color: #f0f0f0;
+    flex-wrap: nowrap; /* Wraps items if they don't fit */
+  }
+  .flex-item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    flex: 1 1 200px; /* 1:1:200px grow: shrink: basis*/
+  }
