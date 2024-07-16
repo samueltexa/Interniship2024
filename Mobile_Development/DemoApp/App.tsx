@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import { StyleSheet, View } from 'react-native';
 // import LoginScreen from './Screens/LogInScreen';
 import { NavigationContainer } from '@react-navigation/native';
-import { StackNavigator } from './src/App/navigation/StackNavigator';
+import  StackNavigator  from './src/src/navigation/StackNavigator';
 
 
 const App = () => {
