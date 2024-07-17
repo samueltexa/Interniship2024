@@ -5,6 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import HomeScreen from '../screens/HomeScreen';
 import {BottomTabsNavigator} from './BottomTabsNavigator';
+import ProductScreen from '../screens/ProductScreen';
 
 const MainStack = createStackNavigator();
 
@@ -38,6 +39,13 @@ export default function StackNavigator() {
         }}
         name="WelcomeScreen"
         component={WelcomeScreen}
+      />
+           <MainStack.Screen
+        options={{
+          header: () => null,
+        }}
+        name="ProductScreen"
+        component={ProductScreen}
       />
       <MainStack.Screen
         options={{
