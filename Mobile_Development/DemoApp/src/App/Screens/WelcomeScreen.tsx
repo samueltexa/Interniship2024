@@ -11,9 +11,7 @@ export default function WelcomeScreen({ navigation }: { navigation: any }) {
       <Image style={styles.image_wrapper}
         source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfbd0BJOd5maqKqCpTi7VzAYapgnPm49YQRNHKHvRPmMmyhcHvaYMAJzWObeAj7Iolu5k&usqp=CAU" }} />
 
-
-
-      <RText c='red' custom_styles={{ fontSize: 20 }}>Welcome to the WelcomeScreen</RText>
+      <RText text='Welcome Screen' custom_styles={{ fontSize: 20 }}></RText>
       <RButton onPress={() => navigation.navigate('LoginScreen')} text_content='Welcome'></RButton>
     </ScreenWrapper>
 
