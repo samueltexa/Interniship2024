@@ -10,7 +10,7 @@ const MainStack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <MainStack.Navigator screenOptions={{}} initialRouteName="HomeStackScreens">
+    <MainStack.Navigator screenOptions={{}} initialRouteName="SplashScreen">
       <MainStack.Screen
         name="SplashScreen"
         options={{
@@ -46,12 +46,7 @@ export default function StackNavigator() {
         name="ProductScreen"
         component={ProductScreen}
       />
-      <MainStack.Screen
-        options={{
-          header: () => null,
-        }}
-        name="HomeStackScreens"
-        component={BottomTabsNavigator}
+      <MainStack.Screen options={{header: () => null,}} name="BottomTabsNavigator" component={BottomTabsNavigator}
       />
     </MainStack.Navigator>
   );
