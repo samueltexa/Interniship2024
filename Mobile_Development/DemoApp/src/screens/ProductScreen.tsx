@@ -9,8 +9,7 @@ import { useRoute } from '@react-navigation/native'
 const ProductScreen = () => {
   const route = useRoute();
   console.log(route.params)
-
-  const product_name = route.params.product_name;
+  
 
 
 
