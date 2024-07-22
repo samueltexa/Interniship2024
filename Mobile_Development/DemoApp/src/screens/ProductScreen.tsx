@@ -4,8 +4,17 @@ import ScreenWrapper from '../components/reusable/ScreenWrapper'
 import Product_Header from '../components/reusable/Product/Product_Header'
 import Product_Image_Wrapper from '../components/reusable/Product/Product_Image_Wrapper'
 import Product_Bottom_Component from '../components/reusable/Product/Product_Bottom_Component'
+import { useRoute } from '@react-navigation/native'
 
 const ProductScreen = () => {
+  const route = useRoute();
+  console.log(route.params)
+
+  const product_name = route.params.product_name;
+
+
+
+
   return (
     <ScreenWrapper isScrollable custom_styles={styles.container}>
       <Product_Header/>
