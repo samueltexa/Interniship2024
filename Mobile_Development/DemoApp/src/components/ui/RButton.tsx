@@ -5,10 +5,10 @@ import {
   TouchableOpacityProps,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export interface IRButton extends TouchableOpacityProps {
-  text_content: string;
+  text_content: string | ReactNode;
 }
 
 const RButton = ({text_content, ...other_props}: IRButton) => {
