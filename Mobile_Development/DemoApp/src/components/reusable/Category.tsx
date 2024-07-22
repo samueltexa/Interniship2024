@@ -1,9 +1,20 @@
 import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RText from '../ui/RText';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
+
+export interface IProduct {
+    id: string,
+    item_name: string,
+    item_image: string
+}
+
+
 
 export default function Category() {
+    const navigation = useNavigation();
     // Category
     const [categories, setCategories] = useState([{
         id: '1',
@@ -26,6 +37,26 @@ export default function Category() {
         item_name: 'Cameras',
         item_image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.0z4ipxElK0jsX8XWrkH3TwHaHa%26pid%3DApi&f=1&ipt=c3b8eb701b7d19f1ea4009fb059365c7939df69a95147fe576f39c22cbdc5d9f&ipo=images',
     }]);
+
+
+    // get/request data
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://fakestoreapi.com/products/categories');
+                setCategories(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }, [])
+
+
+
+
+
+
     return (
         <ScrollView>
             <View style={styles.categories_header}>
@@ -37,17 +68,21 @@ export default function Category() {
             </View>
             <View>
                 <FlatList
+                    data={categories}
                     style={{ marginTop: 10 }}
                     horizontal
                     renderItem={({ item }) => {
                         return (
-                            <View style={{ marginRight: 20, backgroundColor: '#888', padding: 10, borderRadius: 20 }}>
+                            <TouchableOpacity onPress={()=>navigation.navigate('ProductScreen',{product_name:item})}>                           
+                                <View style={{ marginRight: 20, backgroundColor: '#888', padding: 10, borderRadius: 20 }}>
                                 <Image source={{ uri: item.item_image }} style={{ width: 50, height: 50 }} />
                                 <RText>{item.item_name}</RText>
                             </View>
+                            </TouchableOpacity>
+
                         );
                     }}
-                    data={categories}
+
                     keyExtractor={(item) => item.id}
                 />
             </View>
