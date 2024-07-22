@@ -1,15 +1,49 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { ActivityIndicator, Image, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 import ScreenWrapper from '../components/reusable/ScreenWrapper';
 import RTextInput from '../components/ui/RTextInput';
 import RButton from '../components/ui/RButton';
 import RText from '../components/ui/RText';
+import axios from 'axios';
+
 
 const LoginScreen = ({ navigation }: any) => {
-  const handleLogin = () => {
-    console.log('login clicked,');
-    navigation.navigate('HomeStackScreens');
-  };
+  const [isPending, setIspending] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const handleLogin = async() => {
+    setIspending(true);
+    const user_details = {
+      email,
+      password
+    }
+    console.log('user_details', user_details);
+    setIspending(false);
+
+    // Login Functionality
+    try {
+      const response = await axios.post('api', user_details);
+      console.log('response', response.data);
+      // Navigate to the home screen
+    } catch (e) {
+      console.log(e)
+      setIspending(false);
+    }
+
+    // Handle validation
+    setTimeout(() => {
+      navigation.navigate('BottomTabsNavigator');
+
+    })
+  }
+
+
+  // const handleLogin = () => {
+  //   console.log('login clicked,');
+  //   navigation.navigate('HomeStackScreens');
+  // };
 
   const handleForgotPassword = () => {
     console.log('forgot password clicked,');
@@ -28,13 +62,18 @@ const LoginScreen = ({ navigation }: any) => {
         <RTextInput
           placeholderTextColor={'gray'}
           placeholder="Enter your email*"
+          value={email}
+          onChangeText={
+            val => setEmail(val)}
         />
         <RTextInput
+          value={password}
+          onChangeText={val => setPassword(val)}
           placeholderTextColor={'gray'}
-          placeholder="Enter your password*"
+          placeholder="Enter your password*" secureTextEntry
         />
 
-        <RButton text_content="Login" onPress={handleLogin} />
+        <RButton text_content={isPending ? <ActivityIndicator /> : "Login"} onPress={handleLogin} />
         <RText onPress={handleForgotPassword} fs={15} c="darkblue">
           Forgot password?
         </RText>
