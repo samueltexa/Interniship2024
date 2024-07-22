@@ -2,7 +2,6 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react
 import React, { useState } from 'react'
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import RText from '../../ui/RText';
-import { ScrollView } from 'react-native-gesture-handler';
 import RButton from '../../ui/RButton';
 import { Checkbox } from 'react-native-paper';
 
