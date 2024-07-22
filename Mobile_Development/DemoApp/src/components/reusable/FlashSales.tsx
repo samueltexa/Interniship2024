@@ -15,7 +15,6 @@ const FlashSales = () => {
         sale_name: 'Sumsung galaxy Buds Pro\nTrue Wireless Black\n$69.00',
         sale_image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ZTFS93vkliZ046wnsrf6pAHaJ3%26pid%3DApi&f=1&ipt=b8d9d779666f6f598fb46808abb6cb251109eaebbad86741aeae90121502d564&ipo=images',
     },]);
-const navigation = useNavigation();
 
     return (
         <ScrollView>
@@ -25,7 +24,7 @@ const navigation = useNavigation();
                     <View style={{ backgroundColor: 'blue', padding: 4, borderRadius: 5 }}>
                         <RText c='black' style={{ padding: 17 }}>0.2:59:23</RText>
                     </View>
-                    <TouchableOpacity onPress={()=>navigation.navigate('ProductScreen')} style={styles.see_all_wrapper}>
+                    <TouchableOpacity style={styles.see_all_wrapper}>
                         <RText fs={13}>See all</RText>
                         <FontAwesome name="angle-right" size={15} color="#888" />
                     </TouchableOpacity>
