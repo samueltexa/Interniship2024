@@ -1,16 +1,30 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcones from 'react-native-vector-icons/MaterialIcons';
 import RText from '../components/ui/RText';
-import { FlatList, TextInput } from 'react-native-gesture-handler';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { TextInput } from 'react-native-gesture-handler';
 import Category from '../components/reusable/Category';
 import FlashSales from '../components/reusable/FlashSales';
+import axios from 'axios';
 
 const HomeScreen = () => {
-  
+  const [categories, setCategories] = useState()
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('https://fakestoreapi.com/products/categories');
+            setCategories(response.data);
+            console.log('response', response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+},[])
+
+
   return (
     <ScrollView contentContainerStyle={styles.screen_wrapper}>
       {/* Header */}
